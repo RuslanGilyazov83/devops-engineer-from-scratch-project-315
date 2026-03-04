@@ -2,6 +2,13 @@
 
 [![CI](https://github.com/RuslanGilyazov83/project-devops-deploy/actions/workflows/ci.yml/badge.svg)](https://github.com/RuslanGilyazov83/project-devops-deploy/actions/workflows/ci.yml)
 
+## Ссылки
+
+- **Форк приложения (backend + frontend)**: https://github.com/RuslanGilyazov83/project-devops-deploy
+- **Продакшн UI (React Admin)**: https://bulletins.mooo.com
+
+Этот репозиторий содержит только Ansible‑плейбук и переменные для деплоя форка приложения на сервер в Yandex Cloud.
+
 Bulletin board service.
 
 > **Fork policy**: this upstream repository is read-only. We do not review or merge pull requests and we do not accept infrastructure changes (Dockerfiles, Ansible roles, CI/CD workflows, etc.). To experiment or extend the project, fork it and work inside your own repository.
