@@ -9,4 +9,10 @@ ansible-requirements:
 deploy:
 	ansible-playbook -i inventory.ini playbook.yml -e app_image_tag=$(DEPLOY_TAG) --ask-vault-pass
 
-.PHONY: ansible-requirements deploy
+# Откат к стабильной версии образа
+# Передай тег нужной сборки: make rollback STABLE_TAG=<git-sha>
+# Теги всех сборок видны в Docker Hub: https://hub.docker.com/r/ruslangilyazov/project-devops-deploy/tags
+rollback:
+	ansible-playbook -i inventory.ini playbook.yml -e app_image_tag=$(STABLE_TAG) --ask-vault-pass
+
+.PHONY: ansible-requirements deploy rollback
