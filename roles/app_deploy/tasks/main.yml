@@ -40,7 +40,6 @@
     name: "{{ app_container_name }}"
     state: absent
     force_kill: true
-  ignore_errors: true
 
 - name: Запускаем контейнер приложения
   community.docker.docker_container:
