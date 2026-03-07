@@ -35,13 +35,19 @@
       - name: bulletins-net
     env: "{{ app_env }}"
 
+- name: Удаляем старый контейнер перед обновлением
+  community.docker.docker_container:
+    name: "{{ app_container_name }}"
+    state: absent
+    force_kill: true
+  ignore_errors: true
+
 - name: Запускаем контейнер приложения
   community.docker.docker_container:
     name: "{{ app_container_name }}"
     image: "{{ app_image_name }}:{{ app_image_tag }}"
     restart_policy: always
     state: started
-    recreate: true
     published_ports:
       - "8080:8080"
       - "9090:9090"
